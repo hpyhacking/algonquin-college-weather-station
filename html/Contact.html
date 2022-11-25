@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Group Members' Names" content="Qiu Liang, Zhan Pengyong, Jiang Shuihan">
+    <meta name="Group Members' Emails" content="qiu00033@algonquinlive.com, zhan0789@algonquinlive.com, jian0128@algonquinlive.com">
+    <title>Algonquin College Weather Station</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+                <li><a href="About.html">About</a></li>
+                <li>EN</li>
+                <li>FR</li>
+                <li><button>DarkMode</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main> 
+        <h1>Contact Us Form</h1>
+        <form>
+            <!-------------------------------------- name -------------------------------------->
+            <div>
+                <label for="name">Your Name</label><br>
+                <input type="text" id="name" placeholder="Mr.Abul"><br>
+                <span id="nameWarning" class="alert"></span><br>
+            </div>
+
+            <!-------------------------------------- pronoun -------------------------------------->
+            <div>
+                <label for="pronoun">Your Preferred Pronouns</label><br>
+                <select name="pronoun" id="pronoun" >
+                    <option value="" disabled selected>Select your preferred pronoun</option>
+                    <option value="he/him">he/him</option>
+                    <option value="she/her">she/her</option>
+                    <option value="they/them">they/them</option>
+                </select><br>
+                <span id="pronounWarning" class="alert"></span>                
+            </div>  
+
+            <!-------------------------------------- tel -------------------------------------->
+            <div>
+                <label for="phone">Your Phone</label><br>
+                <input type="tel" id="phone" placeholder="(123)456-7890"><br>
+                <span id="phoneWarning" class="alert"></span><br>
+            </div>
+
+            <!-------------------------------------- email -------------------------------------->
+            <div>
+                <label for="email">Your Email</label><br>
+                <input type="email" id="email" placeholder="qasima@algonquincollege.com"><br>
+                <span id="emailWarning" class="alert"></span><br>
+            </div>
+
+            <!-------------------------------------- infotmation -------------------------------------->
+            <div>
+                <p>Which department do you what to contact</p>
+                    <div>
+                        <div>
+                            <label for="tech">Tech Department</label><br>
+                            <input type="checkbox" id="tech" name="department" value="tech" onclick=" ">
+                        </div>
+                        <div>
+                            <label for="network">Network Department</label><br>
+                            <input type="checkbox" id="network" name="department" value="network" onclick=" ">
+                        </div>
+                        <div>
+                            <label for="emergency">Emergency Department</label><br>
+                            <input type="checkbox" id="emergency" name="department" value="emergency" onclick=" ">
+                        </div>
+                        <div>
+                            <label for="other">Other</label><br>
+                            <input type="checkbox" id="other" name="department" value="other" onclick=" ">
+                        </div>
+                        <span id="departmentWarning" class="alert"></span><br>
+                        <div>
+                            <label for="describeinfor">Describe Information</label><br>
+                            <input type="text" name="cat_temp" id="describeinfor">
+                            <span id="describeInforWarning" class="alert"></span><br>
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://github.com/hpyhacking/algonquin-college-weather-station">GitHub</a></li>
+            <li><a href="https://trello.com/b/iu7TVXcv/algonquin-college-weather-station">Trello</a></li>
+        </ul>
+        <div>
+            Copyright ©2022 Algonquin College Weather Station Limited. All Rights Reserved. <br/>
+        </div>
+    </footer>
+</body>
+</html>
