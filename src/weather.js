@@ -1,6 +1,6 @@
 class Weather {
   constructor() {
-    this.text = 'Weather Station'
+    this.text = 'Weather Station Example'
   }
 }
 
