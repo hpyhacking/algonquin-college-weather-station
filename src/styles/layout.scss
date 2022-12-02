@@ -33,11 +33,6 @@ section {
   }
 }
 
-.container {
-  max-width: 1980px;
-  margin: 0 auto !important; 
-}
-
 a {
   font-size: 1em;
   color: $font-color;
@@ -101,8 +96,8 @@ footer {
     }
 
     div#ac-icon {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       background-image: -webkit-image-set(
         url("images/AC_WHT@1x.png") 1x,
         url("images/AC_WHT@2x.png") 2x);
@@ -111,7 +106,7 @@ footer {
         url("images/AC_WHT@2x.png") 2x);
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 150px;
+      background-size: 100px;
     }
 
     ul {

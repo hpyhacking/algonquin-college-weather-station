@@ -1,0 +1,56 @@
+@import 'variables';
+
+$phone-breakpoint: 375px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Phone
+@media screen and (min-width: $phone-breakpoint) and (max-width: $tablet-breakpoint) {
+  .container {
+    max-width: 370px;
+    margin: 0 auto !important; 
+    background-color: blue;
+  }
+
+  p#copyright {
+    font-size: 0.3em;
+    
+    span {
+      margin-left: 5px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  header {
+    section {
+      &:first-child {
+        padding: 40px 0px;
+        background-size: 200px;
+      }
+
+      &:last-child {
+        ul { display: none; }
+      }
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $tablet-breakpoint) and (max-width: $desktop-breakpoint) {
+  .container {
+    max-width: 720px;
+    margin: 0 auto !important; 
+    //background-color: red;
+  }
+}
+
+// Desktop
+@media screen and (min-width: $desktop-breakpoint) {
+  .container {
+    max-width: 1120px;
+    margin: 0 auto !important; 
+    background-color: grey;
+  }
+}
