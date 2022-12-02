@@ -1,15 +1,6 @@
-$primary-color: #006341;
-$second-color: #2B2B2B;
-$third-color: #ABC7BD;
-$background-color: #F0F0F0;
-
-$fa-font-path: "fontawesome-free/webfonts";
-
-@import 'fontawesome-free/scss/fontawesome';
-@import 'fontawesome-free/scss/solid';
-@import 'fontawesome-free/scss/regular';
-@import 'fontawesome-free/scss/brands';
-
-h1 {
-  color: $primary-color;
-}
+@import 'styles/font';
+@import 'styles/layout';
+@import 'styles/search';
+@import 'styles/card';
+@import 'styles/weather';
+//@import 'styles/responsive';
