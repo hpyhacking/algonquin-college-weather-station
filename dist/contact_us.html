@@ -26,7 +26,7 @@
     </header>
     <main>
         <h1>Contact Us Form</h1>
-        <form>
+        <form name="profileForm" method="get">
             <!-------------------------------------- name -------------------------------------->
             <div>
                 <label for="name"><i class="fas fa-user"></i>Your Name</label><br>
@@ -66,27 +66,30 @@
                     <div>
                         <div>
                             <label for="tech">Tech Department</label><br>
-                            <input type="checkbox" id="tech" name="department" value="tech" onclick=" ">
+                            <input type="radio" id="tech" name="department" value="tech" onclick=" ">
                         </div>
                         <div>
                             <label for="network">Network Department</label><br>
-                            <input type="checkbox" id="network" name="department" value="network" onclick=" ">
+                            <input type="radio" id="network" name="department" value="network" onclick=" ">
                         </div>
                         <div>
                             <label for="emergency">Emergency Department</label><br>
-                            <input type="checkbox" id="emergency" name="department" value="emergency" onclick=" ">
+                            <input type="radio" id="emergency" name="department" value="emergency" onclick=" ">
                         </div>
                         <div>
                             <label for="other">Other</label><br>
-                            <input type="checkbox" id="other" name="department" value="other" onclick=" ">
+                            <input type="radio" id="other" name="department" value="other" onclick=" ">
                         </div>
                         <span id="departmentWarning" class="alert"></span><br>
                         <div>
-                            <label for="describeinfor">Describe Information</label><br>
-                            <input type="text" name="cat_temp" id="describeinfor">
-                            <span id="describeInforWarning" class="alert"></span><br>
+                            <label for="describe">Describe Information</label><br>
+                            <input type="text" name="cat_temp" id="describe">
+                            <span id="describeWarning" class="alert"></span><br>
                         </div>
                     </div>
+            </div>
+            <div class="submit">
+                <input type="submit" value="Submit" name="submitBtn" id="submit">
             </div>
         </form>
     </main>
