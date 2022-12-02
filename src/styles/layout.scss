@@ -1,0 +1,102 @@
+@use "sass:color";
+@import 'variables';
+
+html, body {
+  font-size: 100%;
+  color: $second-color;
+  background-color: $background-color;
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1980px;
+  margin: 0 auto !important; 
+}
+
+header {
+  section {
+    &:first-child {
+      padding: 100px 0px;
+      background-image: -webkit-image-set(
+        url("images/WeatherStation@1x.png") 1x,
+        url("images/WeatherStation@2x.png") 2x);
+      background-image: image-set(
+        url("images/WeatherStation@1x.png") 1x,
+        url("images/WeatherStation@2x.png") 2x);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 400px;
+    }
+
+    &:last-child {
+      padding: 0px;
+      background-color: #333;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        list-style-type: none;
+
+        li {
+          a {
+            text-transform: uppercase;
+            padding: 20px;
+            width: 170px;
+            display: inline-block;
+            text-align: center;
+            color: $third-color;
+            font-size: 1.4em;
+
+            &:link { text-decoration: none; }
+
+            &:hover {
+              color: color.adjust($third-color, $lightness: 30%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    ul {
+      li {
+      }
+    }
+  }
+}
+
+
+h1 {
+  color: $primary-color;
+}
+
+main {
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  h2 {
+    font-size: 1.5em;
+  }
+  div.card {
+  }
+}
+
+footer {
+  ul {
+    li {
+    }
+  }
+
+  .copyright {
+  }
+}
+
+
