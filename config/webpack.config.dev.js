@@ -32,7 +32,7 @@ module.exports = {
   },
   ignoreWarnings: [
     {
-      message: /node_modules\/fontawesome-free\/scss/
+      message: /fontawesome-free/
     }
   ],
   devServer: {
