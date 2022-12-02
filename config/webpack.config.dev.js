@@ -23,9 +23,18 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)/,
+        type: 'asset/resource'
       }
     ]
   },
+  ignoreWarnings: [
+    {
+      message: /node_modules\/fontawesome-free\/scss/
+    }
+  ],
   devServer: {
     static: './dist'
   }
