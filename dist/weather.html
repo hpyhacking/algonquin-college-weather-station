@@ -6,24 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Algonquin College Weather Station</title>
   <meta name="author" content="TeamTen">
+  <meta name="page" content="weather">
   <script src="app.js"></script>
+  <link rel="stylesheet" href="app.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 </head>
 <body>
   <header>
-    <div>
-        <img src="" alt="logo">
-    </div>
-    <nav>
+    <section>
+    </section>
+    <section>
+      <nav>
         <ul>
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="Contact.html">Contact Us</a></li>
-            <li><a href="About.html">About</a></li>
-            <li>EN</li>
-            <li>FR</li>
-            <li><button>DarkMode</button></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </section>
+  </header>
 <main>
 <!-------------------------------------- simple weather information -------------------------------------->
     <section>
@@ -69,16 +72,34 @@
 </main>
 </main>
 <footer>
+  <section class='container'>
+    <div id='ac-icon'></div>
     <ul>
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="https://github.com/hpyhacking/algonquin-college-weather-station">GitHub</a></li>
-        <li><a href="https://trello.com/b/iu7TVXcv/algonquin-college-weather-station">Trello</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+      <li><a href="about.html">About</a></li>
+      <li>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/hpyhacking/algonquin-college-weather-station">GitHub</a>
+      </li>
+      <li>
+        <i class="fab fa-trello"></i>
+        <a href="https://trello.com/b/iu7TVXcv/algonquin-college-weather-station">Trello</a>
+      </li>
     </ul>
-    <div>
-        Copyright ©2022 Algonquin College Weather Station Limited. All Rights Reserved. <br/>
-    </div>
+  </section>
+  <section class='container'>
+    <p id='copyright'>
+      <span>
+        <i class="fas fa-copyright"></i> <b>2022</b> 
+        Algonquin College of Applied Arts and Technology
+      </span>
+      <span>
+      <i class="fas fa-users"></i>
+      TeamTen
+      </span>
+    </p>
+  </section>
 </footer>
 </body>
 </html>
