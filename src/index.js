@@ -1,9 +1,5 @@
 require('./index.scss')
 
-const Weather = require('./weather')
-
-$( document ).ready(function() {
-  let weather = new Weather()
-  $('h1').text("Hello World " + weather.text)
-})
-
+import "./app/pages/home.js"
+import "./app/pages/weather.js"
+import "./app/pages/contact_us.js"
