@@ -1,7 +1,7 @@
 class Config {
   static #apikey
 
-  static get apikey() {
+  static get API_KEY() {
     return this.#apikey
   }
 

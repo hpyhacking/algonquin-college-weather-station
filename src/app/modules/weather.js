@@ -2,7 +2,7 @@ const Config = require('../modules/config')
 
 class Weather {
   constructor() {
-    this.text = 'Weather Station Example' + Config.apikey
+    this.text = 'Weather Station Example' + Config.API_KEY
   }
 
   request(lon, lat, callback) {

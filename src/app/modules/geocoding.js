@@ -40,7 +40,7 @@ class Geocoding {
   static query(query, callback) {
     if (POSTCODE_REGEX.test(query)) {
       let zip = `${encodeURIComponent(query)},${CAN_ISO3611}`
-      let url = `${ZIP_ENDPOINT}?zip=${zip}&appid=${Config.apikey}`
+      let url = `${ZIP_ENDPOINT}?zip=${zip}&appid=${Config.API_KEY}`
 
       // {zip: 'POSTCODE', name: 'CityName', lat: LAT, lon: LON, country: 'CA'}
       this.#get(url, callback)
@@ -51,7 +51,7 @@ class Geocoding {
 
       let lat = encodeURIComponent(query.split(",")[0].trim())
       let lon = encodeURIComponent(query.split(",")[1].trim())
-      let url = `${REVERSE_ENDPOINT}?lat=${lat}&lon=${lon}&limit=${this.#limit}&appid=${Config.apikey}`
+      let url = `${REVERSE_ENDPOINT}?lat=${lat}&lon=${lon}&limit=${this.#limit}&appid=${Config.API_KEY}`
 
       // [{"name":"CityName","local_names":{},"lat":LAT,"lon":LON,"country":"CA","state":STATE}]
       this.#get(url, callback)
@@ -59,7 +59,7 @@ class Geocoding {
     }
 
     let q = encodeURIComponent(query.trim())
-    let url = `${DIRECT_ENDPOINT}?q=${q}&limit=${this.#limit}&appid=${Config.apikey}`
+    let url = `${DIRECT_ENDPOINT}?q=${q}&limit=${this.#limit}&appid=${Config.API_KEY}`
     this.#get(url, callback)
 
     return 
