@@ -1,14 +1,31 @@
 const Config = require('../modules/config')
 
+const ENDPOINT_WEATHER = "https://api.openweathermap.org/data/3.0/onecall";
+
 class Weather {
-  constructor() {
-    this.text = 'Weather Station Example' + Config.API_KEY
+  constructor(lat, lon) {
+    this.lat = lat;
+    this.lon = lon;
+    //this.text = 'Weather Station Example' + Config.API_KEY
   }
 
-  request(lon, lat, callback) {
-    let data = {text: this.text}
-    callback(data)
+  request(callback) {
+    //check cache
+    console.log("test request");
+    console.log("test request1", localStorage.getItem(this.lat+ "," +this.lon));
+    if (localStorage.getItem(this.lat+ "," +this.lon)) {
+      console.log("get in cache");
+      console.log(localStorage.getItem(this.lat+ "," +this.lon));
+      let data;
+      return data = localStorage.getItem(this.lat+ "," +this.lon);
+    } else {
+      $.getJSON(`${ENDPOINT_WEATHER}?lat=${this.lat}&lon=${this.lon}&units=metric&appid=${Config.API_KEY}`,
+      function(data){
+        callback(data);
+    })
+    }
   }
+  
 }
 
 module.exports = Weather;
