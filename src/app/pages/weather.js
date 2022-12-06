@@ -12,7 +12,6 @@ $(document).ready(function() {
     let geoForWeather = new Weather(lat, lon);
 
     geoForWeather.request(function(data){
-        localStorage.setItem(lat + "," + lon, data);
         $("#cityName").text(cityName);
         $("#currentTemp").text(data.current.temp + "°");
         $("#weatherDesc").text(data.current.weather[0].description);
