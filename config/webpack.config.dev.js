@@ -40,7 +40,7 @@ module.exports = {
   },
   ignoreWarnings: [
     {
-      message: /fontawesome-free/
+      message: /(fontawesome-free|mustard-ui|null)/
     }
   ],
   devServer: {

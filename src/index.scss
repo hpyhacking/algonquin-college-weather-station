@@ -1,6 +1,17 @@
-@import 'styles/font';
+// https://necolas.github.io/normalize.css/
+@import 'normalize.css/normalize.css';
+
+$color-white: #f0f0f0;
+$color-black: #333333;
+
+$primary-color: #006341;
+$second-color: #333;
+$third-color: #ABC7BD;
+
+$font-color: #DDD;
+$background-color: #F0F0F0;
+
+@import 'styles/fonts';
+@import 'styles/mustard-ui';
+
 @import 'styles/layout';
-@import 'styles/search';
-@import 'styles/card';
-@import 'styles/weather';
-//@import 'styles/responsive';

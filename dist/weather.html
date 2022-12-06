@@ -1,105 +1,96 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Algonquin College Weather Station</title>
-  <meta name="author" content="TeamTen">
-  <meta name="page" content="weather">
-  <script src="app.js"></script>
-  <link rel="stylesheet" href="app.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-</head>
-<body>
-  <header>
-    <section>
-    </section>
-    <section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Algonquin College Weather Station</title>
+    <meta name="author" content="TeamTen">
+    <meta name="page" content="weather">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  </head>
+  <body>
+    <header>
       <nav>
-        <ul>
+        <ul class=''>
           <li><a href="index.html">Home</a></li>
           <li><a href="contact_us.html">Contact Us</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
-    </section>
-  </header>
-<main>
-<!-------------------------------------- simple weather information -------------------------------------->
-    <section>
-      <div>
-        <span class = "Cityname"></span>
-        <span>
-          <i class = "currentTem">
-            <sup>°</sup>
-          </i>
-        </span>
-        <span>
-        <i class = "weatherDescribe"></i>
-        </span>
-        <span class = "weatherIcon"></span>
-        <span>
+    </header>
+    <main>
+      <section class='container container-small'>
+        <div>
+          <span class = "Cityname"></span>
+          <span>
+            <i class = "currentTem">
+              <sup>°</sup>
+            </i>
+          </span>
+          <span>
+            <i class = "weatherDescribe"></i>
+          </span>
+          <span class = "weatherIcon"></span>
+          <span>
             <i class = "lowTem">
               <sup>°</sup>
             </i>
             <i class = "highTem">
               <sup>°</sup>
             </i>
+          </span>
+        </div>
+      </section>
+
+      <section>
+        <div></div>
+      </section>
+
+      <section>
+        <div></div>
+      </section>
+
+      <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+    </main>
+    <footer>
+      <section class='container'>
+        <div id='ac-icon'></div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/hpyhacking/algonquin-college-weather-station">GitHub</a>
+          </li>
+          <li>
+            <i class="fab fa-trello"></i>
+            <a href="https://trello.com/b/iu7TVXcv/algonquin-college-weather-station">Trello</a>
+          </li>
+        </ul>
+      </section>
+      <section class='container'>
+        <p id='copyright'>
+        <span>
+          <i class="fas fa-copyright"></i> <b>2022</b> 
+          Algonquin College of Applied Arts and Technology
         </span>
-      </div>
-    </section>
-
-<!-------------------------------------- hourly temperature -------------------------------------->
-    <section>
-      <div></div>
-    </section>
-
-<!-------------------------------------- 7-day forecast -------------------------------------->
-    <section>
-      <div></div>
-    </section>
-
-<!-------------------------------------- more details -------------------------------------->
-    <section>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
-</main>
-</main>
-<footer>
-  <section class='container'>
-    <div id='ac-icon'></div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="contact_us.html">Contact Us</a></li>
-      <li><a href="about.html">About</a></li>
-      <li>
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/hpyhacking/algonquin-college-weather-station">GitHub</a>
-      </li>
-      <li>
-        <i class="fab fa-trello"></i>
-        <a href="https://trello.com/b/iu7TVXcv/algonquin-college-weather-station">Trello</a>
-      </li>
-    </ul>
-  </section>
-  <section class='container'>
-    <p id='copyright'>
-      <span>
-        <i class="fas fa-copyright"></i> <b>2022</b> 
-        Algonquin College of Applied Arts and Technology
-      </span>
-      <span>
-      <i class="fas fa-users"></i>
-      TeamTen
-      </span>
-    </p>
-  </section>
-</footer>
-</body>
+        <span>
+          <i class="fas fa-users"></i>
+          TeamTen
+        </span>
+        </p>
+      </section>
+    </footer>
+  </body>
 </html>

@@ -1,9 +1,5 @@
-$fa-font-path: "fontawesome-free/webfonts";
-
-@import 'fontawesome-free/scss/fontawesome';
-@import 'fontawesome-free/scss/solid';
-@import 'fontawesome-free/scss/regular';
-@import 'fontawesome-free/scss/brands';
+$regular-font: HomepageBaukasten-Book, Arial, Helvetica, sans-serif;
+$bold-font: HomepageBaukasten-Bold, Arial, Helvetica, sans-serif;
 
 @font-face {
   font-family: 'HomepageBaukasten-Book';
@@ -26,3 +22,14 @@ $fa-font-path: "fontawesome-free/webfonts";
   url('fonts/HomepageBaukasten-Bold.woff') format('woff'),
   url('fonts/HomepageBaukasten-Bold.ttf') format('truetype');
 }
+
+// FontAwesome
+
+$fa-font-path: "fontawesome-free/webfonts";
+
+@import 'fontawesome-free/scss/fontawesome';
+@import 'fontawesome-free/scss/solid';
+@import 'fontawesome-free/scss/regular';
+@import 'fontawesome-free/scss/brands';
+
+
