@@ -10,9 +10,6 @@ class Weather {
   }
 
   request(callback) {
-    //check cache
-    console.log("test request");
-    console.log("test request1", localStorage.getItem(this.lat+ "," +this.lon));
     if (localStorage.getItem(this.lat+ "," +this.lon)) {
       console.log("get in cache");
       console.log(localStorage.getItem(this.lat+ "," +this.lon));
