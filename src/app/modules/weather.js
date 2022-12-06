@@ -10,7 +10,7 @@ class Weather {
 
   request(callback) {
     if (Cache.get(this.lat, this.lon)) {
-      callback(data);
+      callback(Cache.get(this.lat, this.lon));
     } else {
     $.getJSON(`${ENDPOINT_WEATHER}?lat=${this.lat}&lon=${this.lon}&units=metric&appid=${Config.API_KEY}`, 
     function(data){
