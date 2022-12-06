@@ -1,6 +1,6 @@
 const Weather = require('../modules/weather')
 
-class WeatherCard() {
+class WeatherCard {
   constrctor(element) {
     // get data-lat, data-lon and data-city from element attributes
   }
