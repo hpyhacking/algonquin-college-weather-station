@@ -34,38 +34,53 @@
           <div class='col col-xs-10 col-xs-offset-1 col-'>
             <form name="profileForm" method="get">
               <!-------------------------------------- name -------------------------------------->
-              <div>
-                <label for="name"><i class="fas fa-user"></i>Your Name</label><br>
+              <div class="form-control">
+                <label><i class="fas fa-user"></i>Your Name</label>
                 <input type="text" id="name" placeholder="Mr.Abul"><br>
-                <span id="nameWarning" class="alert"></span><br>
+                <span id="nameWarning" class="alert alert-danger"></span><br>
               </div>
 
               <!-------------------------------------- pronoun -------------------------------------->
-              <div>
-                <label for="pronoun"><i class="fas fa-venus-mars"></i>Your Preferred Pronouns</label><br>
-                <select name="pronoun" id="pronoun" >
-                  <option value="" disabled selected>Select your preferred pronoun</option>
-                  <option value="he/him">he/him/his</option>
-                  <option value="she/her">she/her/hers</option>
-                  <option value="they/them">they/them/their</option>
+              <div class="form-control">
+                <label><i class="fas fa-venus-mars"></i>Your Preferred Pronoun</label>
+                <select name="pronoun" id="pronoun">
+                    <option value="" disabled selected>Select your preferred pronoun</option>
+                    <option>he/him/his</option>
+                    <option>she/her/hers</option>
+                    <option>they/them/their</option>
                 </select><br>
-                <span id="pronounWarning" class="alert"></span>
+                <span id="pronounWarning" class="alert alert-danger"></span>
               </div>
 
               <!-------------------------------------- tel -------------------------------------->
-              <div>
-                <label for="phone"><i class="fas fa-phone"></i>Your Phone</label><br>
+              <div class="form-control">
+                <label><i class="fas fa-phone"></i>Your Phone</label><br>
                 <input type="tel" id="phone" placeholder="(123)456-7890"><br>
-                <span id="phoneWarning" class="alert"></span><br>
+                <span id="phoneWarning" class="alert alert-danger"></span><br>
               </div>
 
               <!-------------------------------------- email -------------------------------------->
-              <div>
-                <label for="email"><i class="fas fa-envelope"></i>Your Email</label><br>
+              <div class="form-control">
+                <label><i class="fas fa-envelope"></i>Your Email</label><br>
                 <input type="email" id="email" placeholder="qasima@algonquincollege.com"><br>
-                <span id="emailWarning" class="alert"></span><br>
+                <span id="emailWarning" class="alert alert-danger"></span><br>
               </div>
 
+              <!-------------------------------------- department -------------------------------------->
+              <fieldset>
+                <legend>Which department do you what to contact</legend>
+                <div class="form-control">
+                    <label><input type="radio" name="department"><i class="fas fa-robot"></i>Technology</label>
+                </div>
+                <div class="form-control">
+                    <label><input type="radio" name="department"><i class="fas fa-laptop"></i>Network</label>
+                </div>
+                <div class="form-control">
+                    <label><input type="radio" name="department"><i class="fas fa-exclamation-triangle"></i>Emergency</label>
+                </div>
+                <div class="form-control">
+                    <label><input type="radio" name="department"><i class="fas fa-plus-square"></i>Other</label>
+                </div>
               <!-------------------------------------- infotmation -------------------------------------->
               <div>
                 <p>Which department do you what to contact</p>
@@ -82,21 +97,10 @@
                     <label for="emergency">Emergency Department</label><br>
                     <input type="radio" id="emergency" name="department" value="emergency" onclick=" ">
                   </div>
-                  <div>
                     <label for="other">Other</label><br>
-                    <input type="radio" id="other" name="department" value="other" onclick=" ">
-                  </div>
-                  <span id="departmentWarning" class="alert"></span><br>
-                  <div>
-                    <label for="describe">Describe Information</label><br>
-                    <input type="text" name="cat_temp" id="describe">
-                    <span id="describeWarning" class="alert"></span><br>
-                  </div>
+                    <button class="button-primary button-round" type="submit" id = "submit" name="submit" value="submit">Submit</button> 
+                    <button class="button-primary button-round" type="reset" id = "reset" name="reset" value="reset">Reset</button> 
                 </div>
-              </div>
-              <div class="submit">
-                <input type="submit" value="Submit" name="submitBtn" id="submit">
-              </div>
             </form>
           </div>
         </div>
