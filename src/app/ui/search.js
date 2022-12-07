@@ -8,7 +8,7 @@ const ITEM_TEMPLATE = `
 
 const ITEM_EMPTY_TEMPLATE = `
 <li class='nothing'>
-  Not found in the world, please try again.
+  Not found in the world...
 </li>`
 
 function applySearching(element) {
@@ -26,8 +26,13 @@ function applySearching(element) {
     }
   })
 
-  let width = $(element).find("input[type=search]").outerWidth()
-  $(element).find("ul").css("width", width)
+  let adjust_resutls = function() {
+    let width = $(element).find("input[type=search]").outerWidth()
+    $(element).find("ul").css("width", width)
+  }
+
+  $(window).resize(adjust_resutls)
+  adjust_resutls()
 
   $(element).find('input[type=search]').on('input', function(){
     clearTimeout(this.delay);
