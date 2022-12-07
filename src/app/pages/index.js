@@ -1,9 +1,9 @@
-const loadCurrentCard = require('../ui/current_card')
+const applySearching = require('../ui/search')
 
 $(document).ready(function() {
   if ($("meta[name=page]").attr('content') != "index") {
     return 
   }
 
-  loadCurrentCard()
+  applySearching($("#searching"))
 })
