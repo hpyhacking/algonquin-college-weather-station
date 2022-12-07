@@ -81,23 +81,18 @@
                 <div class="form-control">
                     <label><input type="radio" name="department"><i class="fas fa-plus-square"></i>Other</label>
                 </div>
+                <span id="departmentWarning" class="alert alert-danger"></span><br>
+              </fieldset>
+
               <!-------------------------------------- infotmation -------------------------------------->
-              <div>
-                <p>Which department do you what to contact</p>
+                <div class="form-control">
+                    <label><i class="fas fa-edit"></i>Describe Information</label>
+                    <textarea id="describe" placeholder="Enter some content..."></textarea><br>
+                    <span id="describeWarning" class="alert alert-danger"></span><br>
+                </div>
+                  
+              <!-------------------------------------- submit&reset -------------------------------------->
                 <div>
-                  <div>
-                    <label for="tech">Tech Department</label><br>
-                    <input type="radio" id="tech" name="department" value="tech" onclick=" ">
-                  </div>
-                  <div>
-                    <label for="network">Network Department</label><br>
-                    <input type="radio" id="network" name="department" value="network" onclick=" ">
-                  </div>
-                  <div>
-                    <label for="emergency">Emergency Department</label><br>
-                    <input type="radio" id="emergency" name="department" value="emergency" onclick=" ">
-                  </div>
-                    <label for="other">Other</label><br>
                     <button class="button-primary button-round" type="submit" id = "submit" name="submit" value="submit">Submit</button> 
                     <button class="button-primary button-round" type="reset" id = "reset" name="reset" value="reset">Reset</button> 
                 </div>
