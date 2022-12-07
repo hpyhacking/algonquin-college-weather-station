@@ -5,8 +5,8 @@ $(document).ready(function() {
     return 
   }
 
-  $("[data-city]").each(function(i, element){
-    let card = new WeatherCard($(element).attr("data-lat"), $(element).attr("data-lon"), $(element).attr("data-city"));
-    card.render($(element).attr("data-city"));
+  $("[data-city]").each(function(_, element){
+    let card = new WeatherCard(element);
+    card.render();
   });
 });
