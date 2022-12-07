@@ -6,7 +6,6 @@ $(document).ready(function() {
   }
 
   $("[data-city]").each(function(_, element){
-    let card = new WeatherCard(element);
-    card.render();
+    new WeatherCard(element).render()
   });
 });
