@@ -1,22 +1,20 @@
 const Weather = require('../modules/weather')
 
 class WeatherCard {
-  constrctor(dataLat, dataLon, dataCity) {
-    // get data-lat, data-lon and data-city from element attributes
-    this.dataLat = dataLat;
-    this.dataLon = dataLon;
-    this.datacity = dataCity;
+  constructor(lat, lon, city) {
+    this.lat = lat;
+    this.lon = lon;
+    this.city = city;
   }
 
-  renderCard(dataLat, dataLon, dataCity) {
-    // use Weather load data to append info to this element
-    let cardGeoForWeather = new Weather(dataLat, dataLon);
- 
+  render(city) {
+    let cardGeoForWeather = new Weather(this.lat, this.lon);
+
     cardGeoForWeather.request(function(data){
-    $("[data-city=" + "'" + dataCity + "'" + "] " + "#current-temp").text(data.current.temp + "°");
-    $("[data-city=" + "'" + dataCity + "'" + "] " + "#weather-desc").text(data.current.weather[0].description);
-    $("[data-city=" + "'" + dataCity + "'" + "] " + "#temp-min").text("H: " + data.daily[0].temp.min + "°");
-    $("[data-city=" + "'" + dataCity + "'" + "] " + "#temp-max").text("L: " + data.daily[0].temp.max + "°");
+    $("[data-city=" + "'" + city + "'" + "] " + "#current-temp").text(data.current.temp + "°");
+    $("[data-city=" + "'" + city + "'" + "] " + "#weather-desc").text(data.current.weather[0].description);
+    $("[data-city=" + "'" + city + "'" + "] " + "#temp-min").text("H: " + data.daily[0].temp.min + "°");
+    $("[data-city=" + "'" + city + "'" + "] " + "#temp-max").text("L: " + data.daily[0].temp.max + "°");
     })
   }
 }
