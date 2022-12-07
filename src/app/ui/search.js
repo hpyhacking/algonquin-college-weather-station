@@ -4,8 +4,13 @@ const ITEM_TEMPLATE = `
 <li data-lat='#lat#' data-lon='#lon#' data-city='#city#' data-country='#country#'>
   <i class="fas fa-search"></i>
   #city##country#
-</li>
-`
+</li>`
+
+const ITEM_EMPTY_TEMPLATE = `
+<li class='nothing'>
+  Not found in the world, please try again.
+</li>`
+
 function applySearching(element) {
   $(window).on('click', function() {
     $(element).find("ul").hide()
@@ -13,6 +18,12 @@ function applySearching(element) {
 
   $(element).find("input[type=search]").click(function(event) {
     event.stopPropagation()
+  })
+
+  $(element).find("ul").click(function(event) {
+    if ($(this).find('li.nothing').length) {
+      event.stopPropagation()
+    }
   })
 
   let width = $(element).find("input[type=search]").outerWidth()
@@ -32,29 +43,34 @@ function applySearching(element) {
       Geocoding.query(this.value, function(data) {
         let results = $(element).find('ul').empty()
 
-        data.forEach(function(result) {
-          $(element).find("ul").show()
-          let r = ITEM_TEMPLATE.replaceAll("#lat#", result.lat)
-                               .replaceAll("#lon#", result.lon)
-                               .replaceAll("#city#", result.city)
+        $(element).find("ul").show()
 
-          if (result.state && result.country_code) {
-            r = r.replaceAll("#country#", `, ${result.state}, ${result.country_code}`)
-          } else if (result.country_code) {
-            r = r.replaceAll("#country#", `, ${result.country_code}`)
-          } else {
-            r = r.replaceAll("#country#", "")
-          }
+        if (data.length == 0) {
+          results.append($(ITEM_EMPTY_TEMPLATE))
+        } else {
+          data.forEach(function(result) {
+            let r = ITEM_TEMPLATE.replaceAll("#lat#", result.lat)
+                                 .replaceAll("#lon#", result.lon)
+                                 .replaceAll("#city#", result.city)
 
-          results.append($(r))
-        })
+            if (result.state && result.country_code) {
+              r = r.replaceAll("#country#", `, ${result.state}, ${result.country_code}`)
+            } else if (result.country_code) {
+              r = r.replaceAll("#country#", `, ${result.country_code}`)
+            } else {
+              r = r.replaceAll("#country#", "")
+            }
+
+            results.append($(r))
+          })
+        }
       })
     } else {
       $(element).find("ul").hide()
     }
   })
 
-  $(element).on('click', 'li', function() {
+  $(element).on('click', 'li[data-lat]', function() {
     let lat = encodeURIComponent($(this).data('lat'))
     let lon = encodeURIComponent($(this).data('lon'))
     let city = encodeURIComponent($(this).data('city'))

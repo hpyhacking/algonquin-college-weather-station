@@ -58,7 +58,7 @@ $background-color: #F0F0F0;
     width: 100px;
     display: none;
 
-    
+    user-select: none;
 
     li {
       padding: 5px 11px;
@@ -69,6 +69,15 @@ $background-color: #F0F0F0;
       &:hover {
         color: color.adjust($primary-color, $blackness: 30%);
         cursor: pointer;
+      }
+
+      &.nothing {
+        color: color.adjust($third-color, $lightness: 0%);
+        text-indent: 25px;
+      }
+
+      &.nothing:hover {
+        cursor: default;
       }
 
       .fa-search {
