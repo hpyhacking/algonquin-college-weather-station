@@ -19,18 +19,19 @@ class Geocoding {
     this.#limit = size
   }
 
-  static #fix_data = function(data) {
-    if (Array.isArray(data)) {
-      return data
-    } else {
-      return [data]
-    }
-  }
-
   static #get(url, callback) {
     $.get(url, function(data) {
       if (callback) {
-        callback(this.#fix_data(data))
+        let arr = data
+
+        if (Array.isArray(data) == false) {
+          arr = [data]
+        }
+
+        let stand_data = $.map(arr, function(n) {
+          return {city: n['name'], lat: n['lat'], lon: n['lon'], state: n['state'], country_code: n['country']}
+        })
+        callback(stand_data)
       }
     }).fail(function() {
       callback([])

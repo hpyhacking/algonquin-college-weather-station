@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // https://necolas.github.io/normalize.css/
 @import 'normalize.css/normalize.css';
 
@@ -8,10 +10,135 @@ $primary-color: #006341;
 $second-color: #333;
 $third-color: #ABC7BD;
 
-$font-color: #DDD;
+$font-color: $primary-color;
+$font-reverse-color: $third-color;
 $background-color: #F0F0F0;
 
 @import 'styles/fonts';
 @import 'styles/mustard-ui';
 
 @import 'styles/layout';
+
+#searching {
+  input[type=search] + .fa-search {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 13px;
+
+    color: $primary-color;
+  }
+
+  input[type=search] {
+    text-indent: 1.6em;
+    border: 2px solid $third-color;
+    border-radius: 10px;
+
+    &:hover, &.hover {
+      //border: 2px solid $primary-color;
+    }
+
+    &:hover + .fa-search, &.hover + .fa-search {
+      //color: $primary-color;
+    }
+
+    & + .fa-search {
+      color: $third-color;
+    }
+  }
+
+  ul {
+    margin-top: 2px;
+    border-radius: 10px;
+    border: 2px solid $third-color;
+
+
+    position: absolute;
+    width: 100%;
+    background: $background-color;
+    width: 100px;
+    display: none;
+
+    user-select: none;
+
+    li {
+      padding: 5px 11px;
+      color: $primary-color;
+      list-style-type: none;
+      //font-family: $bold-font;
+
+      &:hover {
+        color: color.adjust($primary-color, $blackness: 30%);
+        cursor: pointer;
+      }
+
+      &.nothing {
+        color: color.adjust($third-color, $lightness: 0%);
+        text-indent: 25px;
+      }
+
+      &.nothing:hover {
+        cursor: default;
+      }
+
+      .fa-search {
+        padding-right: 4px;
+        color: $third-color;
+      }
+    }
+  }
+}
+
+.weather-card {
+  background: color.adjust($background-color, $blackness: 1%);
+  border: 2px solid $primary-color;
+  border-radius: 2px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: .5em 1em;
+
+  position: relative;
+  overflow: hidden;
+
+  div.left {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    * {
+      margin-bottom: 0px;
+    }
+  }
+
+  div.right {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+      font-size: 2.6em;
+      align-self: flex-end;
+    }
+
+
+  }
+    & > i {
+      z-index: 0;
+      color: $third-color;
+      position: absolute;
+      right: 20px;
+      font-size: 8em;
+      opacity: 0.2;
+    }
+}
+
+@include breakpoint-min($bp-medium) {
+  .row .col-md-offset-0 {
+    margin-left: 0;
+  }
+}     
+
