@@ -27,7 +27,6 @@ class GeolocationCard {
       let cached_city = window.localStorage.getItem(key)
 
       if (cached_city) {
-        window.sessionStorage.setItem('city', cached_city)
         render_card(lat, lon, cached_city)
         return
       }
