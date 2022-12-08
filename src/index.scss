@@ -151,6 +151,10 @@ $background-color: #F0F0F0;
   }
 }
 
+#weather-card-template {
+  display: none;
+}
+
 @include breakpoint-min($bp-medium) {
   .row .col-md-offset-0 {
     margin-left: 0;
