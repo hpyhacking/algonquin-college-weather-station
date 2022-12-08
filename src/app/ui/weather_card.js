@@ -1,14 +1,13 @@
 const Weather = require('../modules/weather')
 
 const CARD_TEMPLATE = `
-<div>
+<div class='left'>
   <h6>#city#</h6>
-  <p class=''>#name#</p>
-  <p class='range'><span>L:</span> #min#</p>
-  <p class='range'><span>H:</span> #max#</p>
+  <p><i class='fas #icon#'></i> #name#</p>
+  <p><span>L:</span> #min#&#x2103; <span>H:</span> #max#&#x2103;</p>
 </div>
-<div>
-  <span>#temp#</span>
+<div class='right'>
+  <span>#temp#&#x2103;</span>
 </div>
 <i class='fas #icon#'></i>
 `
@@ -43,14 +42,14 @@ class WeatherCard {
     weather.request(function(data){
       let condition = match_condition(data)
 
-      let card = CARD_TEMPLATE.replace('#temp#', data.current.temp)
-                              .replace('#min#', data.daily[0].temp.min)
-                              .replace('#max#', data.daily[0].temp.max)
+      let card = CARD_TEMPLATE.replace('#temp#', Math.round(data.current.temp))
+                              .replace('#min#', Math.round(data.daily[0].temp.min))
+                              .replace('#max#', Math.round(data.daily[0].temp.max))
                               .replace('#name#', condition.name)
-                              .replace('#icon#', condition.icon)
+                              .replaceAll('#icon#', condition.icon)
                               .replace('#city#', city)
       
-      $(element).empty().append($(card)).toggleClass('card')
+      $(element).empty().append($(card)).toggleClass('weather-card')
     })
   }
 
