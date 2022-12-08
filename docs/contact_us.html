@@ -1,0 +1,136 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Algonquin College Weather Station</title>
+    <meta name="author" content="TeamTen">
+    <meta name="page" content="contact_us">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class=''>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class='container container-small'>
+        <div class='row'>
+          <div class='col col-sm-12'>
+            <h1 class='align-center'>Contact Us Form</h1>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col col-xs-10 col-xs-offset-1 col-'>
+            <form name="profileForm" method="get">
+              <!-------------------------------------- name -------------------------------------->
+              <div>
+                <label for="name"><i class="fas fa-user"></i>Your Name</label><br>
+                <input type="text" id="name" placeholder="Mr.Abul"><br>
+                <span id="nameWarning" class="alert"></span><br>
+              </div>
+
+              <!-------------------------------------- pronoun -------------------------------------->
+              <div>
+                <label for="pronoun"><i class="fas fa-venus-mars"></i>Your Preferred Pronouns</label><br>
+                <select name="pronoun" id="pronoun" >
+                  <option value="" disabled selected>Select your preferred pronoun</option>
+                  <option value="he/him">he/him/his</option>
+                  <option value="she/her">she/her/hers</option>
+                  <option value="they/them">they/them/their</option>
+                </select><br>
+                <span id="pronounWarning" class="alert"></span>
+              </div>
+
+              <!-------------------------------------- tel -------------------------------------->
+              <div>
+                <label for="phone"><i class="fas fa-phone"></i>Your Phone</label><br>
+                <input type="tel" id="phone" placeholder="(123)456-7890"><br>
+                <span id="phoneWarning" class="alert"></span><br>
+              </div>
+
+              <!-------------------------------------- email -------------------------------------->
+              <div>
+                <label for="email"><i class="fas fa-envelope"></i>Your Email</label><br>
+                <input type="email" id="email" placeholder="qasima@algonquincollege.com"><br>
+                <span id="emailWarning" class="alert"></span><br>
+              </div>
+
+              <!-------------------------------------- infotmation -------------------------------------->
+              <div>
+                <p>Which department do you what to contact</p>
+                <div>
+                  <div>
+                    <label for="tech">Tech Department</label><br>
+                    <input type="radio" id="tech" name="department" value="tech" onclick=" ">
+                  </div>
+                  <div>
+                    <label for="network">Network Department</label><br>
+                    <input type="radio" id="network" name="department" value="network" onclick=" ">
+                  </div>
+                  <div>
+                    <label for="emergency">Emergency Department</label><br>
+                    <input type="radio" id="emergency" name="department" value="emergency" onclick=" ">
+                  </div>
+                  <div>
+                    <label for="other">Other</label><br>
+                    <input type="radio" id="other" name="department" value="other" onclick=" ">
+                  </div>
+                  <span id="departmentWarning" class="alert"></span><br>
+                  <div>
+                    <label for="describe">Describe Information</label><br>
+                    <input type="text" name="cat_temp" id="describe">
+                    <span id="describeWarning" class="alert"></span><br>
+                  </div>
+                </div>
+              </div>
+              <div class="submit">
+                <input type="submit" value="Submit" name="submitBtn" id="submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class='container'>
+        <div id='ac-icon'></div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/hpyhacking/algonquin-college-weather-station">GitHub</a>
+          </li>
+          <li>
+            <i class="fab fa-trello"></i>
+            <a href="https://trello.com/b/iu7TVXcv/algonquin-college-weather-station">Trello</a>
+          </li>
+        </ul>
+      </section>
+      <section class='container'>
+        <p id='copyright'>
+        <span>
+          <i class="fas fa-copyright"></i> <b>2022</b> 
+          Algonquin College of Applied Arts and Technology
+        </span>
+        <span>
+          <i class="fas fa-users"></i>
+          TeamTen
+        </span>
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
