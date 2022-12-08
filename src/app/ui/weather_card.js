@@ -56,7 +56,13 @@ class WeatherCard {
         card = card.replace("#geolocation#", "")
       }
       
-      $(element).empty().append($(card)).removeClass('loading')
+      $(element).empty().append($(card)).removeClass('loading').click(function() {
+        let lat = $(this).data('lat')
+        let lon = $(this).data('lon')
+        let city = $(this).data('city')
+
+        window.location.href = `/weather.html?lat=${lat}&lon=${lon}&city=${city}`
+      })
     })
   }
 
