@@ -103,6 +103,20 @@ $background-color: #F0F0F0;
   position: relative;
   overflow: hidden;
 
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    div.right {
+      font-weight: bold;
+    }
+
+    & > .fa-solid {
+      z-index: 0;
+      color: color.adjust($third-color, $blackness: 20%);
+    }
+  }
+
   div.left {
     z-index: 3;
     display: flex;
@@ -149,6 +163,10 @@ $background-color: #F0F0F0;
     }
 
   }
+}
+
+#weather-card-template {
+  display: none;
 }
 
 @include breakpoint-min($bp-medium) {
