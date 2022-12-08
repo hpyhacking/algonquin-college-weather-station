@@ -8,9 +8,9 @@ const CAN_ISO3611 = 'CA'
 // https://stackoverflow.com/questions/3518504/regular-expression-for-matching-latitude-longitude-coordinates
 const COORDINATE_REGEX = /^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/
 
-const ZIP_ENDPOINT = 'http://api.openweathermap.org/geo/1.0/zip'
-const REVERSE_ENDPOINT = 'http://api.openweathermap.org/geo/1.0/reverse'
-const DIRECT_ENDPOINT = 'http://api.openweathermap.org/geo/1.0/direct'
+const ZIP_ENDPOINT = 'https://api.openweathermap.org/geo/1.0/zip'
+const REVERSE_ENDPOINT = 'https://api.openweathermap.org/geo/1.0/reverse'
+const DIRECT_ENDPOINT = 'https://api.openweathermap.org/geo/1.0/direct'
 
 class Geocoding {
   static #limit = 3
