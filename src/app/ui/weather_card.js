@@ -61,7 +61,7 @@ class WeatherCard {
         let lon = $(this).data('lon')
         let city = $(this).data('city')
 
-        window.location.href = `./weather.html?lat=${lat}&lon=${lon}&city=${city}`
+        window.location.assign(`./weather.html?lat=${lat}&lon=${lon}&city=${city}`)
       })
     })
   }
