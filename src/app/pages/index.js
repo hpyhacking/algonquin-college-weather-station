@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   let watching_list = new WatchingList()
   watching_list.render($('#watching_list'))
-
+  
   if (navigator.geolocation) {
     // geolocation card loading when browser support
     GeolocationCard.render($("#geolocation-card"))
