@@ -22,8 +22,8 @@ $(document).ready(function() {
         //24 hourly weather
         let hourly24 = data.hourly.slice(0, 24)
 
-        for (let hourly of hourly24) {
-          var timeStamp= hourly.dt
+        $(".hourly").each(function(i, element){
+          var timeStamp= hourly24[i].dt
           var dateFormat = new Date(timeStamp*1000)
           let getHour = dateFormat.getHours().toString()
 
@@ -33,12 +33,11 @@ $(document).ready(function() {
           } else {
             formmatedHour = getHour
           }
-
-          let i = hourly24.indexOf(hourly)
-          $(".formmatedHour")[i].textContent = formmatedHour
-          $(".hourlyTemp")[i].textContent = hourly.temp + "°"
-          $(".houlyIcon")[i].innerHTML = getIcon(hourly.weather[0].main)         
-        }
+          
+          $(element).find(".formmatedHour").text(formmatedHour)
+          $(element).find(".hourlyTemp").text(hourly24[i].temp + "°")
+          $(element).find("i").addClass(getIcon(hourly24[i].weather[0].main))
+        })
 
         //7 daily weather
         let daily7 = data.daily.slice(1, 8)
@@ -47,51 +46,51 @@ $(document).ready(function() {
           var dateFormat = new Date(timeStamp*1000)
           let dayOfWeek = dateFormat.toDateString().slice(0, 4)
           $(element).find(".dayOfWeek").text(dayOfWeek)
-          $(element).find(".dailyIcon").html(getIcon(daily7[i].weather[0].main))
+          $(element).find("i").addClass(getIcon(daily7[i].weather[0].main))
           $(element).find(".dailyTempMin").text(daily7[i].temp.min + "°")
           $(element).find(".dailyTempMax").text(daily7[i].temp.max + "°")
         })
 
         //other weather details
         $("#feelsLike").text(data.current["feels_like"] + "°")
-        $("#iconFeelsLike").html('<i class="fas fa-temperature-high"></i>')
+        $("#iconFeelsLike").addClass("fas fa-temperature-high")
         
         $("#visibility").text(data.current.visibility + " km")
-        $("#iconVisibility").html('<i class="fas fa-eye"></i>')
+        $("#iconVisibility").addClass("fas fa-eye")
 
         $("#humidity").text(data.current.humidity + "%")
-        $("#iconHumidity").html('<i class="fas fa-tint"></i>')
+        $("#iconHumidity").addClass("fas fa-tint")
         
         $("#windSpeed").text(data.current["wind_speed"] + " km/h")
-        $("#iconWindSpeed").html('<i class="fas fa-wind"></i>')
+        $("#iconWindSpeed").addClass("fas fa-wind")
     });
 
 
     function getIcon(descMain) {
       let icon;
       if (descMain === "Thunderstorm") {
-        icon = '<i class="fas fa-poo-storm"></i>'
+        icon = "fas fa-poo-storm"
       }
       else if (descMain === "Drizzle") {
-        icon = '<i class="fas fa-cloud-rain"></i>'
+        icon = "fas fa-cloud-rain"
       }
       else if (descMain === "Rain") {
-        icon = '<i class="fas fa-cloud-showers-heavy"></i>'
+        icon = "fas fa-cloud-showers-heavy"
       }
       else if (descMain === "Snow") {
-        icon = '<i class="fas fa-snowflake"></i>'
+        icon = "fas fa-snowflake"
       }
       else if (descMain === 'Clouds') {
-        icon = '<i class="fas fa-cloud"></i>'
+        icon = "fas fa-cloud"
       }
       else if (descMain === 'Clear') {
-        icon = '<i class="fas fa-sun"></i>'
+        icon = "fas fa-sun"
       }
       else if (descMain === "Mist")  {
-        icon = '<i class="fas fa-smog"></i>'
+        icon = "fas fa-smog"
       }
       else if (descMain === "Fog")  {
-        icon = '<i class="fas fa-smog"></i>'
+        icon = "fas fa-smog"
       }
 
       return icon
