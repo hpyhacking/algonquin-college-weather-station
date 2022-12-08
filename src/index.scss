@@ -114,7 +114,7 @@ $background-color: #F0F0F0;
     }
 
 
-    h6 > .fas {
+    h6 > .fa-location-arrow {
       color: color.adjust($third-color, $blackness: 30%);
       font-size: .8em;
     }
@@ -130,17 +130,23 @@ $background-color: #F0F0F0;
       font-size: 2.6em;
       align-self: flex-end;
     }
-
-
   }
 
-  & > i {
+  & > .fa-solid {
     z-index: 0;
     color: $third-color;
     position: absolute;
     right: 20px;
     font-size: 8em;
     opacity: 0.2;
+  }
+
+  &.loading {
+    height: 100%;
+    .fa-spinner {
+      color: color.adjust($third-color, $blackness: 30%);
+      font-size: 2em;
+    }
 
   }
 }

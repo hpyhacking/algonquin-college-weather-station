@@ -7,7 +7,10 @@ $(document).ready(function() {
     return 
   }
 
-  GeolocationCard.render($("#geolocation-card"))
+  if (navigator.geolocation) {
+    // geolocation card loading when browser support
+    GeolocationCard.render($("#geolocation-card"))
+  }
   
   applySearching($("#searching"))
 
