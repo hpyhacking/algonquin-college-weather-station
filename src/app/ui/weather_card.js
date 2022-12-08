@@ -2,7 +2,7 @@ const Weather = require('../modules/weather')
 
 const CARD_TEMPLATE = `
 <div class='left'>
-  <h6>#city#</h6>
+  <h6>#geolocation# #city#</h6>
   <p><i class='fas #icon#'></i> #name#</p>
   <p><span>L:</span> #min#&#x2103; <span>H:</span> #max#&#x2103;</p>
 </div>
@@ -10,6 +10,7 @@ const CARD_TEMPLATE = `
   <span>#temp#&#x2103;</span>
 </div>
 <i class='fas #icon#'></i>
+
 `
 
 const CONDITIONS = {
@@ -48,6 +49,12 @@ class WeatherCard {
                               .replace('#name#', condition.name)
                               .replaceAll('#icon#', condition.icon)
                               .replace('#city#', city)
+
+      if ($(element).attr('id') == 'geolocation-card') {
+        card = card.replace("#geolocation#", "<i class='fas fa-location-arrow'></i>")
+      } else {
+        card = card.replace("#geolocation#", "")
+      }
       
       $(element).empty().append($(card)).toggleClass('weather-card')
     })
