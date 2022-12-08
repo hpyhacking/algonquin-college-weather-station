@@ -1,9 +1,15 @@
 const WeatherCard = require('../ui/weather_card')
 const Geocoding = require('../modules/geocoding')
 
+const INFO = `
+<div class='left'>
+  <h6>Oops!</h6>
+  <p>Geolocation Data Sharing Denied</p>
+  <p>Allow for Current Location Weather</p>
+</div>`
+
 class GeolocationCard {
   static render(element) {
-    //return 
     let render_card = function(lat, lon, city) {
       $(element).data('city', city)
       $(element).data('lat', lat)
@@ -39,9 +45,7 @@ class GeolocationCard {
 
     let error_callback = function(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
-
-      let info = `<p>Oops! Looks Like Location Sharing Denied.</p>`
-      $(element).empty().append($(info))
+      $(element).empty().append($(INFO))
     }
 
     let options = {

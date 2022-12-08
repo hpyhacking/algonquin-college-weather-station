@@ -113,7 +113,6 @@ $background-color: #F0F0F0;
       margin-bottom: 0px;
     }
 
-
     h6 > .fa-location-arrow {
       color: color.adjust($third-color, $blackness: 30%);
       font-size: .8em;
@@ -143,6 +142,7 @@ $background-color: #F0F0F0;
 
   &.loading {
     height: 100%;
+
     .fa-spinner {
       color: color.adjust($third-color, $blackness: 30%);
       font-size: 2em;
