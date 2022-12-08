@@ -40,8 +40,7 @@ class GeolocationCard {
     let error_callback = function(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
 
-      let info = `<p>User has denied the request for sharing location.
-                     Please enable location sharing in web browser.</p>`
+      let info = `<p>Oops! Looks Like Location Sharing Denied.</p>`
       $(element).empty().append($(info))
     }
 
