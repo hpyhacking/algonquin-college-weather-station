@@ -111,6 +111,11 @@ $background-color: #F0F0F0;
     * {
       margin-bottom: 0px;
     }
+
+    h6 > .fas {
+      color: color.adjust($third-color, $blackness: 30%);
+      font-size: .8em;
+    }
   }
 
   div.right {
@@ -126,14 +131,16 @@ $background-color: #F0F0F0;
 
 
   }
-    & > i {
-      z-index: 0;
-      color: $third-color;
-      position: absolute;
-      right: 20px;
-      font-size: 8em;
-      opacity: 0.2;
-    }
+
+  & > i {
+    z-index: 0;
+    color: $third-color;
+    position: absolute;
+    right: 20px;
+    font-size: 8em;
+    opacity: 0.2;
+
+  }
 }
 
 @include breakpoint-min($bp-medium) {
