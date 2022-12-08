@@ -73,8 +73,8 @@ class WeatherCard {
 
     if (id == 800) {
       id = 8001 // in daytime default
-      if (data.current.dt < current.sunrise &&
-          data.current.dt > current.sunse) {
+      if (data.current.dt < data.current.sunrise &&
+          data.current.dt > data.current.sunset) {
         id = 8002
       }
     } else {
