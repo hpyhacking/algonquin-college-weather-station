@@ -3,13 +3,13 @@ const Weather = require('../modules/weather')
 const CARD_TEMPLATE = `
 <div class='left'>
   <h6>#geolocation# #city#</h6>
-  <p><i class='fas #icon#'></i> #name#</p>
+  <p><i class='fa-solid #icon#'></i> #name#</p>
   <p><span>L:</span> #min#&#x2103; <span>H:</span> #max#&#x2103;</p>
 </div>
 <div class='right'>
   <span>#temp#&#x2103;</span>
 </div>
-<i class='fas #icon#'></i>
+<i class='fa-solid #icon#'></i>
 
 `
 
@@ -56,7 +56,7 @@ class WeatherCard {
         card = card.replace("#geolocation#", "")
       }
       
-      $(element).empty().append($(card)).toggleClass('weather-card')
+      $(element).empty().append($(card)).removeClass('loading')
     })
   }
 
