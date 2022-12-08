@@ -82,7 +82,7 @@ function applySearching(element) {
     let state = encodeURIComponent($(this).data('state'))
     let country = encodeURIComponent($(this).data('country'))
 
-    window.location.href = `/weather.html?lat=${lat}&lon=${lon}&city=${city}&country=${country}`
+    window.location.href = `./weather.html?lat=${lat}&lon=${lon}&city=${city}&country=${country}`
     $(element).find('input[type=search]').val("")
   })
 }
