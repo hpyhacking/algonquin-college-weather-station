@@ -31,7 +31,7 @@ $background-color: #F0F0F0;
   input[type=search] {
     text-indent: 1.6em;
     border: 2px solid $third-color;
-    border-radius: 10px;
+    border-radius: 2px;
 
     &:hover, &.hover {
       //border: 2px solid $primary-color;
@@ -47,8 +47,9 @@ $background-color: #F0F0F0;
   }
 
   ul {
+    z-index: 100;
     margin-top: 2px;
-    border-radius: 10px;
+    border-radius: 2px;
     border: 2px solid $third-color;
 
 
@@ -111,6 +112,7 @@ $background-color: #F0F0F0;
     * {
       margin-bottom: 0px;
     }
+
 
     h6 > .fas {
       color: color.adjust($third-color, $blackness: 30%);
