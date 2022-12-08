@@ -53,16 +53,9 @@ $(document).ready(function() {
 
         //other weather details
         $("#feelsLike").text(data.current["feels_like"] + "°")
-        $("#iconFeelsLike").addClass("fas fa-temperature-high")
-        
         $("#visibility").text(data.current.visibility + " km")
-        $("#iconVisibility").addClass("fas fa-eye")
-
         $("#humidity").text(data.current.humidity + "%")
-        $("#iconHumidity").addClass("fas fa-tint")
-        
         $("#windSpeed").text(data.current["wind_speed"] + " km/h")
-        $("#iconWindSpeed").addClass("fas fa-wind")
     });
 
 
