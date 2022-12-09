@@ -21,12 +21,18 @@ $(document).ready(function() {
         $("#tempMax").text("H: " + Math.round(data.daily[0].temp.max) + "°")
 
         //24 hourly weather
-        let hourly24 = data.hourly.slice(0, 24)
+        let hourly24 = data.hourly.slice(0, 7)
 
         $(".hourly").each(function(i, element){
           var timeStamp= hourly24[i].dt
           var dateFormat = new Date(timeStamp*1000)
           let getHour = dateFormat.getHours().toString()
+
+          if (dateFormat.getHours() >= 12) {
+            getHour = getHour + " PM"
+          } else {
+            getHour = getHour + " AM"
+          }
 
           let formmatedHour
           if (getHour.length === 1) {
