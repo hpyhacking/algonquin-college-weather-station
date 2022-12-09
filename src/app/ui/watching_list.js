@@ -20,6 +20,11 @@ class WatchingList {
     window.localStorage.setItem(this.key, JSON.stringify(this.#list))
   }
 
+  getList() {
+    let list = JSON.parse(window.localStorage.getItem(this.key))
+    return list
+  }
+
   add(city, lat, lon) {
     let list = JSON.parse(window.localStorage.getItem(this.key))
     list.push({city: city, lat: lat, lon: lon})

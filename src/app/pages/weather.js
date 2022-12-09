@@ -1,4 +1,5 @@
 const Weather = require('../modules/weather.js')
+const WatchingList= require('../ui/watching_list')
 
 $(document).ready(function() {
     if ($("meta[name=page]").attr('content') != "weather") {
@@ -88,6 +89,40 @@ $(document).ready(function() {
 
       return icon
     } 
+
+    let watching_list = new WatchingList()
+
+    let list0 = watching_list.getList()
+    cityList0 = []
+    for (let line of list0) {
+      cityList0.push(line["city"]);
+    }
+
+    if (cityList0.indexOf(cityName) >=0) {
+      $("#toggleIcon").addClass("fas fa-minus-square")
+    }
+    else {
+      $("#toggleIcon").addClass("fas fa-plus-square")
+    }
+
+    $("#toggleIcon").click(function(){
+      let list = watching_list.getList()
+      cityList = []
+      for (let line of list) {
+        cityList.push(line["city"]);
+      }
+
+      if (cityList.indexOf(cityName) >= 0) {
+        $("#toggleIcon").removeClass("fas fa-minus-square")
+        $("#toggleIcon").addClass( "fas fa-plus-square")
+        watching_list.remove(lat, lon)
+      }
+      else {
+        $("#toggleIcon").removeClass("fas fa-plus-square")
+        $("#toggleIcon").addClass("fas fa-minus-square")
+        watching_list.add(cityName, lat, lon)
+      }
+    })
 
   })
   
