@@ -16,8 +16,8 @@ $(document).ready(function() {
         $("#cityName").text(cityName)
         $("#currentTemp").text(data.current.temp + "°")
         $("#weatherDesc").text(data.current.weather[0].description)
-        $("#tempMin").text("H: " + data.daily[0].temp.min + "°")
-        $("#tempMax").text("L: " + data.daily[0].temp.max + "°")
+        $("#tempMin").text("L: " + data.daily[0].temp.min + "°")
+        $("#tempMax").text("H: " + data.daily[0].temp.max + "°")
 
         //24 hourly weather
         let hourly24 = data.hourly.slice(0, 24)
