@@ -43,6 +43,11 @@ header {
   background-repeat: no-repeat;
   background-position: top;
   background-size: 370px;
+  
+  @include breakpoint-max($bp-medium - 1) {
+    background-size: 270px;
+    background-position: 50% 28px;
+  }
 
   nav {
     margin-top: 150px;
