@@ -126,7 +126,7 @@ $(document).ready(function() {
 
   // Add an event to the form on submit to validate input
   document.profile.addEventListener("submit", validate);
-
+  
   // Add an event to the form on reset to clear warning
   $("#reset").click(function(){  
     $(".alert alert-danger").text("");
