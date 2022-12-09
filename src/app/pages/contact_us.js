@@ -10,20 +10,20 @@ $(document).ready(function() {
 
       //display warning if name is not entered
       if (profile.name.value.trim() === "") {
-        $("#nameWarning").text = "*Please enter your name*";
+        $("#nameWarning").text ("*Please enter your name*");
           valid = false;
       }
 
       // // display warning if pronoun is not selected
       if (profile.pronoun.options.selectedIndex === 0) {
           valid = false;
-          $("#pronounWarning").text = "*Please select your pronoun*";
+          $("#pronounWarning").text ( "*Please select your pronoun*");
       }
 
       //display warning if phone is not vaild
       const phone_regex = /^\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/
       if (phone_regex.test(phone) == false)  {
-          $('#phoneWarning').text = "*This is not a vaild phone*";
+          $('#phoneWarning').text ( "*This is not a vaild phone*");
           valid = false;
       }
 
@@ -38,12 +38,12 @@ $(document).ready(function() {
           }
           if (checked == false) {
               valid = false;
-              $('#departmentWarning').text = "*Department is required*";
+              $('#departmentWarning').text ("*Department is required*");
           }
 
       //display warning if information is not entered
       if (profile.describe.value.trim() == "") {
-        $('#describeWarning').text = "*Please describe information*";
+        $('#describeWarning').text("Please describe information*");
             valid = false;
           }
 
@@ -51,7 +51,7 @@ $(document).ready(function() {
       const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (EMAIL_REGEX.test(email) == false) {
         valid = false;
-        $('#emailWarning').text = "*This is not a vaild email*";
+        $('#emailWarning').text ("*This is not a vaild email*");
       }
    
       // valid than submit
@@ -68,14 +68,14 @@ $(document).ready(function() {
   //remove warning if name has input
   $('#name').blur(function () {
       if (this.value !== "") {
-        $("#nameWarning").text = "";
+        $("#nameWarning").text ("") ;
       }
   });
 
   //*remove warning if pronoun has selected
   $('#pronoun').blur(function () {
       if (profile.pronoun.options.selectedIndex !== 0) {
-        $("#pronounWarning").text = "";
+        $("#pronounWarning").text ("");
       }
   });
 
@@ -83,7 +83,7 @@ $(document).ready(function() {
   const phone_regex = /^\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/
   $('#phone').blur(function() {
       if (phone_regex.test(phone) == true)  {
-        $('#phoneWarning').text = "";
+        $('#phoneWarning').text ("");
       }
   });
 
@@ -91,36 +91,36 @@ $(document).ready(function() {
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   $('#email').blur(function () {
       if (EMAIL_REGEX.test(email) == true)  {
-        $('#emailWarning').text = "";
+        $('#emailWarning').text ("");
       }
   });
 
   //remove warning if department selected has input
   $('[name = "department"]')[0].blur(function () {
       if (this.checked) {
-        $('#departmentWarning').text = '';
+        $('#departmentWarning').text ("");
       }
   });
   $('[name = "department"]')[1].blur(function () {
       if (this.checked) {
-        $('#departmentWarning').text = '';
+        $('#departmentWarning').text ("");
       }
   });
   $('[name = "department"]')[2].blur(function () {
       if (this.checked) {
-        $('#departmentWarning').text = '';
+        $('#departmentWarning').text ("");
       }
   });
   $('[name = "department"]')[3].blur(function () {
       if (this.checked) {
-        $('#departmentWarning').text = '';
+        $('#departmentWarning').text ("");
       }
   });
 
   //remove warning if describe information has input
   $('#describe').blur(function () {
       if (this.value.trim() !== "") {
-        $('#describeWarning').text = "";
+        $('#describeWarning').text ("");
       }
   });
 
@@ -129,7 +129,7 @@ $(document).ready(function() {
   
   // Add an event to the form on reset to clear warning
   $("#reset").click(function(){  
-    $(".alert alert-danger").text("");
+    $(".alert").text("");
   })
 
 
