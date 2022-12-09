@@ -22,7 +22,6 @@ $(document).ready(function() {
 
       //display warning if phone is not vaild
       const phone_regex = /^\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/
-
       let phone = $("#phone").val()
       if (phone_regex.test(phone) == false)  {
           $('#phoneWarning').text ( "*This is not a vaild phone*");
@@ -60,7 +59,7 @@ $(document).ready(function() {
       // valid than submit
       if (valid) {
           alert("Submit successfully!");
-        window.location.href="https://hpyhacking.github.io/algonquin-college-weather-station/contact_us.html";
+        window.location.assign("./contact_us.html")
       } 
 
     }
