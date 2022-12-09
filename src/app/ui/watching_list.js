@@ -20,15 +20,23 @@ class WatchingList {
     window.localStorage.setItem(this.key, JSON.stringify(this.#list))
   }
 
-  getList() {
-    let list = JSON.parse(window.localStorage.getItem(this.key))
-    return list
-  }
-
   add(city, lat, lon) {
     let list = JSON.parse(window.localStorage.getItem(this.key))
     list.push({city: city, lat: lat, lon: lon})
     window.localStorage.setItem(this.key, JSON.stringify(list))
+  }
+
+  isExist(lat, lon) {
+    let list = JSON.parse(window.localStorage.getItem(this.key))
+    let found = false
+
+    list.forEach(function(i) { 
+      if (i.lat == lat && i.lon == lon) {
+        found = true
+      }
+    })
+
+    return found
   }
 
   remove(lat, lon) {

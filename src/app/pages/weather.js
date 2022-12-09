@@ -90,39 +90,25 @@ $(document).ready(function() {
       return icon
     } 
 
-    let watching_list = new WatchingList()
+    let list = new WatchingList()
 
-    let list0 = watching_list.getList()
-    cityList0 = []
-    for (let line of list0) {
-      cityList0.push(line["city"]);
-    }
-
-    if (cityList0.indexOf(cityName) >=0) {
-      $("#toggleIcon").addClass("fas fa-minus-square")
+    if (list.isExist(lat, lon)) {
+      $("#plusButton").hide()
     }
     else {
-      $("#toggleIcon").addClass("fas fa-plus-square")
+      $("#minusButton").hide()
     }
 
-    $("#toggleIcon").click(function(){
-      let list = watching_list.getList()
-      cityList = []
-      for (let line of list) {
-        cityList.push(line["city"]);
-      }
-
-      if (cityList.indexOf(cityName) >= 0) {
-        $("#toggleIcon").removeClass("fas fa-minus-square")
-        $("#toggleIcon").addClass( "fas fa-plus-square")
-        watching_list.remove(lat, lon)
-      }
-      else {
-        $("#toggleIcon").removeClass("fas fa-plus-square")
-        $("#toggleIcon").addClass("fas fa-minus-square")
-        watching_list.add(cityName, lat, lon)
-      }
+    $("#minusButton").on('click', function(){
+      list.remove(lat, lon)
+      $("#plusButton").show()
+      $("#minusButton").hide()
     })
 
+    $("#plusButton").on('click', function(){
+      list.add(cityName, lat, lon)
+      $("#plusButton").hide()
+      $("#minusButton").show()
+    })
   })
   
