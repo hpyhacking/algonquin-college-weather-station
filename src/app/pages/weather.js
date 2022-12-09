@@ -1,4 +1,5 @@
 const Weather = require('../modules/weather.js')
+const WatchingList= require('../ui/watching_list')
 
 $(document).ready(function() {
     if ($("meta[name=page]").attr('content') != "weather") {
@@ -89,5 +90,25 @@ $(document).ready(function() {
       return icon
     } 
 
+    let list = new WatchingList()
+
+    if (list.isExist(lat, lon)) {
+      $("#plusButton").hide()
+    }
+    else {
+      $("#minusButton").hide()
+    }
+
+    $("#minusButton").on('click', function(){
+      list.remove(lat, lon)
+      $("#plusButton").show()
+      $("#minusButton").hide()
+    })
+
+    $("#plusButton").on('click', function(){
+      list.add(cityName, lat, lon)
+      $("#plusButton").hide()
+      $("#minusButton").show()
+    })
   })
   
