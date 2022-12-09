@@ -14,10 +14,10 @@ $(document).ready(function() {
     geoForWeather.request(function(data){
         //overall weather
         $("#cityName").text(cityName)
-        $("#currentTemp").text(data.current.temp + "°")
+        $("#currentTemp").text(Math.round(data.current.temp) + "°")
         $("#weatherDesc").text(data.current.weather[0].description)
-        $("#tempMin").text("L: " + data.daily[0].temp.min + "°")
-        $("#tempMax").text("H: " + data.daily[0].temp.max + "°")
+        $("#tempMin").text("L: " + Math.round(data.daily[0].temp.min) + "°")
+        $("#tempMax").text("H: " + Math.round(data.daily[0].temp.max) + "°")
 
         //24 hourly weather
         let hourly24 = data.hourly.slice(0, 24)
@@ -35,7 +35,7 @@ $(document).ready(function() {
           }
           
           $(element).find(".formmatedHour").text(formmatedHour)
-          $(element).find(".hourlyTemp").text(hourly24[i].temp + "°")
+          $(element).find(".hourlyTemp").text(Math.round(hourly24[i].temp) + "°")
           $(element).find("i").addClass(getIcon(hourly24[i].weather[0].main))
         })
 
@@ -47,8 +47,8 @@ $(document).ready(function() {
           let dayOfWeek = dateFormat.toDateString().slice(0, 4)
           $(element).find(".dayOfWeek").text(dayOfWeek)
           $(element).find("i").addClass(getIcon(daily7[i].weather[0].main))
-          $(element).find(".dailyTempMin").text(daily7[i].temp.min + "°")
-          $(element).find(".dailyTempMax").text(daily7[i].temp.max + "°")
+          $(element).find(".dailyTempMin").text(Math.round(daily7[i].temp.min) + "°")
+          $(element).find(".dailyTempMax").text(Math.round(daily7[i].temp.max) + "°")
         })
 
         //other weather details
