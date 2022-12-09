@@ -22,6 +22,8 @@ $(document).ready(function() {
 
       //display warning if phone is not vaild
       const phone_regex = /^\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/
+
+      let phone = $("#phone").val()
       if (phone_regex.test(phone) == false)  {
           $('#phoneWarning').text ( "*This is not a vaild phone*");
           valid = false;
@@ -49,6 +51,7 @@ $(document).ready(function() {
 
       //validate email
       const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      let email = $("#email").val()
       if (EMAIL_REGEX.test(email) == false) {
         valid = false;
         $('#emailWarning').text ("*This is not a vaild email*");
@@ -81,6 +84,7 @@ $(document).ready(function() {
 
   //remove warning if phone is vaild
   const phone_regex = /^\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/
+  let phone = $("#phone").val()
   $('#phone').blur(function() {
       if (phone_regex.test(phone) == true)  {
         $('#phoneWarning').text ("");
@@ -89,6 +93,7 @@ $(document).ready(function() {
 
   //remove warning if email is vaild
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  let email = $("#email").val()
   $('#email').blur(function () {
       if (EMAIL_REGEX.test(email) == true)  {
         $('#emailWarning').text ("");
