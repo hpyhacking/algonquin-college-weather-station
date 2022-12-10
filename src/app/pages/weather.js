@@ -16,30 +16,31 @@ $(document).ready(function() {
         //overall weather
         $("#cityName").text(cityName)
         $("#currentTemp").text(Math.round(data.current.temp) + "°")
-        $("#weatherDesc").text(data.current.weather[0].description)
+        $("#weatherDesc").text(data.current.weather[0].description).css('text-transform', 'capitalize')
         $("#tempMin").text("L: " + Math.round(data.daily[0].temp.min) + "°")
         $("#tempMax").text("H: " + Math.round(data.daily[0].temp.max) + "°")
 
         //24 hourly weather
-        let hourly24 = data.hourly.slice(0, 7)
+        let hourly24 = data.hourly.slice(0, 24)
 
         $(".hourly").each(function(i, element){
           var timeStamp= hourly24[i].dt
           var dateFormat = new Date(timeStamp*1000)
           let getHour = dateFormat.getHours().toString()
 
-          if (dateFormat.getHours() >= 12) {
-            getHour = getHour + " PM"
-          } else {
-            getHour = getHour + " AM"
-          }
-
           let formmatedHour
-          if (getHour.length === 1) {
+          if (getHour >= 0 && getHour < 10) {
             formmatedHour = '0'+ getHour
           } else {
             formmatedHour = getHour
           }
+
+          if (dateFormat.getHours() >= 12) {
+            formmatedHour = formmatedHour + " PM"
+          } else {
+            formmatedHour = formmatedHour + " AM"
+          }
+          console.log(formmatedHour);
           
           $(element).find(".formmatedHour").text(formmatedHour)
           $(element).find(".hourlyTemp").text(Math.round(hourly24[i].temp) + "°")
